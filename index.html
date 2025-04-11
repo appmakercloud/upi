@@ -61,7 +61,7 @@
                 </div>
             </div>
             <!-- Toggle between UPI and PayPal -->
-            <a id="toggle-link" href="#" class="toggle-payment">Donate via PayPal? Click Here</a>
+            
         </div>
     </div>
 
@@ -77,26 +77,7 @@
 
             let isUpi = true;
 
-            // Function to switch to PayPal
-            function switchToPayPal() {
-                loadingContainer.style.display = "block"; // Show loading spinner
-                qrImage.style.display = "none"; // Hide QR image
-
-                qrImage.onload = function() {
-                    loadingContainer.style.display = "none"; // Hide loading spinner
-                    qrImage.style.display = "block"; // Show QR image
-                };
-
-                qrImage.src = "assets/paypal_qr.png"; // Replace with your PayPal QR code image
-                paymentId.textContent = "flickmax"; // Replace with your PayPal ID
-                paymentButton.textContent = "Open PayPal";
-                paymentButton.removeEventListener("click", copyUpiId);
-                paymentButton.addEventListener("click", openPayPalLink);
-                toggleLink.textContent = "Donate via UPI? Click Here";
-                upiAnimation.style.display = "none";
-                qrText.textContent = "Scan with any QR scanning app or use the button";
-                isUpi = false;
-            }
+            
 
             // Function to switch to UPI
             function switchToUpi() {
@@ -132,10 +113,7 @@
                 }, 2500);
             }
 
-            // Function to open PayPal link
-            function openPayPalLink() {
-                window.open("https://www.paypal.com/paypalme/flickmax", "_blank");
-            }
+           
 
             // Toggle between UPI and PayPal when the link is clicked
             toggleLink.addEventListener("click", function (e) {
